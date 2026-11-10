@@ -1,0 +1,50 @@
+# Tasks
+- [x] Task 1: 创建智能控制页面基础框架和状态管理
+  - [x] SubTask 1.1: 定义页面全局状态数据模型（灌溉、光照、温度、湿度、通风、节能等状态）
+  - [x] SubTask 1.2: 创建页面基础布局结构和滚动容器
+- [x] Task 2: 实现灌溉系统模块组件
+  - [x] SubTask 2.1: 水泵功率 Slider 组件（0-100%）
+  - [x] SubTask 2.2: 灌溉时长 +/- 按钮组件（1-60分钟）
+  - [x] SubTask 2.3: 土壤湿度阈值组件（0-100%）
+  - [x] SubTask 2.4: 水泵运行状态 Toggle 和启停按钮
+- [x] Task 3: 实现光照系统模块组件
+  - [x] SubTask 3.1: 单组灯功率 Slider（0-100%）
+  - [x] SubTask 3.2: 开灯组数 +/- 按钮（1-20）
+  - [x] SubTask 3.3: 遮光帘开合度 Slider（0-100%）
+  - [x] SubTask 3.4: 光强自动补偿 Toggle 和开启/关闭光照按钮
+- [x] Task 4: 实现温度调节模块组件
+  - [x] SubTask 4.1: 目标温度 Slider（10-40℃，支持小数）
+  - [x] SubTask 4.2: 设备优先级按钮组
+  - [x] SubTask 4.3: 温差保护阈值 +/- 按钮（1-10℃）
+- [x] Task 5: 实现湿度调节模块组件
+  - [x] SubTask 5.1: 湿度目标值 Slider（30-90%）
+  - [x] SubTask 5.2: 湿度容忍度 +/- 按钮（1-20%）
+  - [x] SubTask 5.3: 湿度调节模式下拉选择框
+  - [x] SubTask 5.4: 加湿/除湿按钮组
+- [x] Task 6: 实现通风系统模块组件
+  - [x] SubTask 6.1: 通风模式按钮组（自然/强制/混合）
+  - [x] SubTask 6.2: 风扇转速 Slider（500-3000 RPM）
+  - [x] SubTask 6.3: 通风时长 +/- 按钮（10-120分钟）
+  - [x] SubTask 6.4: 窗户开合角度 Slider（0-90°）
+- [x] Task 7: 实现预警阈值与档案模块组件
+  - [x] SubTask 7.1: 作物选择弹窗组件
+  - [x] SubTask 7.2: 预警提示条和详情弹窗
+  - [x] SubTask 7.3: 作物管理卡片（编辑/删除）
+- [x] Task 8: 实现节能优化模块组件
+  - [x] SubTask 8.1: 累计节水/碳排放数值动态增长动画
+  - [x] SubTask 8.2: 环形进度条能效展示和详情弹窗
+- [x] Task 9: 添加交互动效和样式优化
+  - [x] SubTask 9.1: 按钮点击反馈动效
+  - [x] SubTask 9.2: 状态切换动效
+  - [x] SubTask 9.3: 响应式布局适配
+- [x] Task 10: 增强 StepperControl 按钮点击反馈动效
+  - [x] SubTask 10.1: 为 +/- 按钮添加 scale 缩放动效
+  - [x] SubTask 10.2: 添加状态变量控制按钮动画
+- [x] Task 11: 通风系统添加总开关功能
+  - [x] SubTask 11.1: 添加 ventOn 状态变量
+  - [x] SubTask 11.2: 在通风模块添加 Toggle 开关组件
+  - [x] SubTask 11.3: 开关状态变化时同步更新 UI
+
+# Task Dependencies
+- Task 10 依赖于 Task 9
+- Task 11 依赖于 Task 9

@@ -1,0 +1,142 @@
+# 风险等级配置文件
+# 定义不同操作的风险等级和处理策略
+
+# 低风险操作配置
+LOW:
+  description: "低风险操作，可自动执行"
+  actions:
+    - action_type: "LIGHT_CONTROL"
+      target_device: "补光灯"
+      description: "补光灯开关控制"
+      examples:
+        - "开启补光灯"
+        - "关闭补光灯"
+    
+    - action_type: "FAN_CONTROL"
+      target_device: "风扇"
+      description: "风扇开关控制"
+      examples:
+        - "开启风扇"
+        - "关闭风扇"
+        - "调节风扇转速"
+  
+  execution_policy:
+    auto_execute: true  # 自动执行
+    require_confirmation: false  # 无需确认
+    async_review: true  # 异步审查反馈
+    log_level: "INFO"
+
+# 中风险操作配置
+MEDIUM:
+  description: "中风险操作，需记录并审查"
+  actions:
+    - action_type: "IRRIGATION"
+      target_device: "灌溉系统"
+      description: "灌溉操作"
+      examples:
+        - "开启灌溉"
+        - "调节灌溉量"
+        - "定时灌溉"
+    
+    - action_type: "VENT_CONTROL"
+      target_device: "通风窗"
+      description: "通风窗调节"
+      examples:
+        - "打开通风窗"
+        - "调节通风窗开度"
+        - "关闭通风窗"
+  
+  execution_policy:
+    auto_execute: true  # 自动执行
+    require_confirmation: false  # 无需确认
+    async_review: true  # 执行后审查
+    log_level: "WARNING"
+    notify_admin: true  # 通知管理员
+
+# 高风险操作配置
+HIGH:
+  description: "高风险操作，必须用户确认后执行"
+  actions:
+    - action_type: "FERTILIZATION"
+      target_device: "施肥系统"
+      description: "大面积施肥"
+      risk_factors:
+        - "大面积影响作物生长"
+        - "可能造成肥害"
+        - "成本较高"
+      examples:
+        - "大面积施肥"
+        - "追肥操作"
+    
+    - action_type: "WINDOW_CONTROL"
+      target_device: "通风窗"
+      description: "高温关窗"
+      conditions:
+        - "温度 > 35°C"
+      risk_factors:
+        - "高温环境可能导致作物热害"
+        - "关窗可能加剧温度上升"
+      examples:
+        - "高温时关闭通风窗"
+    
+    - action_type: "PESTICIDE_SPRAY"
+      target_device: "农药喷洒系统"
+      description: "农药喷洒"
+      risk_factors:
+        - "农药残留风险"
+        - "环境影响"
+        - "人员安全"
+      examples:
+        - "喷洒杀虫剂"
+        - "喷洒杀菌剂"
+  
+  execution_policy:
+    auto_execute: false  # 不自动执行
+    require_confirmation: true  # 必须确认
+    confirmation_timeout: 300  # 确认超时时间（秒）
+    async_review: false  # 同步审查
+    log_level: "ERROR"
+    notify_admin: true  # 通知管理员
+    lock_device: true  # 锁定设备，防止冲突操作
+    escalation_policy:  # 升级策略
+      timeout_action: "cancel"  # 超时后取消操作
+      notify_escalation: true  # 通知升级
+
+# 默认风险等级
+default_risk_level: "MEDIUM"
+
+# 风险评估规则
+risk_assessment_rules:
+  # 基于操作类型的默认风险等级
+  action_type_mapping:
+    "LIGHT_CONTROL": "LOW"
+    "FAN_CONTROL": "LOW"
+    "IRRIGATION": "MEDIUM"
+    "VENT_CONTROL": "MEDIUM"
+    "FERTILIZATION": "HIGH"
+    "PESTICIDE_SPRAY": "HIGH"
+    "WINDOW_CONTROL": "MEDIUM"  # 默认中风险，特定条件下升级为高风险
+  
+  # 基于环境条件的风险升级规则
+  condition_upgrades:
+    - condition: "temperature > 35"
+      action_types: ["WINDOW_CONTROL"]
+      upgrade_to: "HIGH"
+      reason: "高温环境下关窗风险升级"
+    
+    - condition: "area > 1000"  # 面积大于1000平方米
+      action_types: ["FERTILIZATION"]
+      upgrade_to: "HIGH"
+      reason: "大面积施肥风险升级"
+    
+    - condition: "pesticide_toxicity == 'high'"
+      action_types: ["PESTICIDE_SPRAY"]
+      upgrade_to: "HIGH"
+      reason: "高毒性农药风险升级"
+
+# 设备互斥锁配置
+device_lock_config:
+  enabled: true
+  lock_timeout: 600  # 锁超时时间（秒）
+  max_wait_time: 300  # 最大等待时间（秒）
+  retry_interval: 5  # 重试间隔（秒）

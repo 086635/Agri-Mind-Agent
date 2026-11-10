@@ -1,0 +1,30 @@
+# LangGraph 核心依赖
+langgraph>=0.0.28
+langchain>=0.1.6
+langchain-core>=0.1.23
+langchain-openai>=0.0.5
+langchain-community>=0.0.17
+
+# OpenAI API
+openai>=1.10.0
+
+# 向量数据库
+chromadb>=0.4.22
+
+# Web 框架
+fastapi>=0.109.0
+uvicorn[standard]>=0.27.0
+pydantic>=2.5.3
+
+# 数据库
+sqlalchemy>=2.0.25
+asyncpg>=0.29.0
+psycopg2-binary>=2.9.9
+
+# 数据处理（使用 conda 安装或预编译包）
+# pandas>=2.1.4
+# numpy>=1.26.3
+
+# 其他工具
+python-dotenv>=1.0.0
+httpx>=0.26.0

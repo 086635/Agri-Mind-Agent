@@ -1,0 +1,382 @@
+{
+    "_meta": {
+        "description": "智慧农业 AI 网关系统 - 前端 Mock 数据",
+        "version": "1.0",
+        "generated_at": "2026-04-15",
+        "note": "所有数据均为伪造，仅供前端 UI 渲染测试使用，不包含任何真实业务数据"
+    },
+    "raw_environmental_readings": [
+        {
+            "id": 1,
+            "timestamp": "2026-04-15T08:30:00Z",
+            "device_id": "sensor_temp_001",
+            "batch_id": "batch_20260415",
+            "sensor_type": "air_temp",
+            "raw_value": 26.5000,
+            "reliability_score": 0.9800,
+            "experiment_group": "CONTROL",
+            "created_at": "2026-04-15T08:30:00Z"
+        },
+        {
+            "id": 2,
+            "timestamp": "2026-04-15T08:30:00Z",
+            "device_id": "sensor_humid_001",
+            "batch_id": "batch_20260415",
+            "sensor_type": "air_humidity",
+            "raw_value": 72.3000,
+            "reliability_score": 0.9700,
+            "experiment_group": "CONTROL",
+            "created_at": "2026-04-15T08:30:00Z"
+        },
+        {
+            "id": 3,
+            "timestamp": "2026-04-15T08:30:00Z",
+            "device_id": "sensor_light_001",
+            "batch_id": "batch_20260415",
+            "sensor_type": "light_lux",
+            "raw_value": 45000.0000,
+            "reliability_score": 0.9600,
+            "experiment_group": "EXPERIMENTAL",
+            "created_at": "2026-04-15T08:30:00Z"
+        }
+    ],
+    "agri_analytical_metrics": [
+        {
+            "id": 1,
+            "batch_id": "batch_20260413",
+            "device_id": "greenhouse_001",
+            "strategy_id": "strategy_auto_001",
+            "record_date": "2026-04-13",
+            "par_val_umol": 850.50,
+            "dli_daily_mol": 15.20,
+            "carbon_sink_rate_g_hr": 2.3500,
+            "vpd_val_kpa": 1.0500,
+            "nutrient_consumption_rate_mg_hr": 125.80,
+            "current_accumulated_gdd_c": 820.50,
+            "lue_score_pct": 82.50,
+            "energy_optimization_index": 0.8500,
+            "r_squared_val": 0.9200,
+            "completion_rate_pct": 95.00,
+            "data_status": "VALID"
+        },
+        {
+            "id": 2,
+            "batch_id": "batch_20260414",
+            "device_id": "greenhouse_001",
+            "strategy_id": "strategy_auto_001",
+            "record_date": "2026-04-14",
+            "par_val_umol": 920.30,
+            "dli_daily_mol": 17.80,
+            "carbon_sink_rate_g_hr": 2.8100,
+            "vpd_val_kpa": 1.1200,
+            "nutrient_consumption_rate_mg_hr": 138.50,
+            "current_accumulated_gdd_c": 845.20,
+            "lue_score_pct": 88.30,
+            "energy_optimization_index": 0.9200,
+            "r_squared_val": 0.9500,
+            "completion_rate_pct": 98.00,
+            "data_status": "VALID"
+        },
+        {
+            "id": 3,
+            "batch_id": "batch_20260415",
+            "device_id": "greenhouse_002",
+            "strategy_id": "strategy_manual_002",
+            "record_date": "2026-04-15",
+            "par_val_umol": 680.00,
+            "dli_daily_mol": 12.50,
+            "carbon_sink_rate_g_hr": 1.9200,
+            "vpd_val_kpa": 0.9500,
+            "nutrient_consumption_rate_mg_hr": 98.60,
+            "current_accumulated_gdd_c": 780.30,
+            "lue_score_pct": 72.10,
+            "energy_optimization_index": 0.7800,
+            "r_squared_val": 0.8800,
+            "completion_rate_pct": 88.50,
+            "data_status": "PENDING"
+        }
+    ],
+    "device_digital_twin_status": [
+        {
+            "id": 1,
+            "device_id": "fan_001",
+            "rated_power_w": 50.00,
+            "runtime_total_hrs": 1250.50,
+            "on_off_cycles_count": 3420,
+            "duty_cycle_ratio_pct": 35.20,
+            "device_thermal_slope": 0.0235,
+            "action_latency_ms": 120,
+            "response_consistency_r2": 0.9500,
+            "failure_probability_pct": 2.30,
+            "last_maintenance_date": "2026-03-15T10:00:00Z",
+            "updated_at": "2026-04-15T08:00:00Z"
+        },
+        {
+            "id": 2,
+            "device_id": "pump_001",
+            "rated_power_w": 200.00,
+            "runtime_total_hrs": 890.25,
+            "on_off_cycles_count": 1560,
+            "duty_cycle_ratio_pct": 18.50,
+            "device_thermal_slope": 0.0458,
+            "action_latency_ms": 250,
+            "response_consistency_r2": 0.8800,
+            "failure_probability_pct": 5.80,
+            "last_maintenance_date": "2026-02-20T14:30:00Z",
+            "updated_at": "2026-04-15T08:00:00Z"
+        },
+        {
+            "id": 3,
+            "device_id": "light_001",
+            "rated_power_w": 100.00,
+            "runtime_total_hrs": 2100.75,
+            "on_off_cycles_count": 780,
+            "duty_cycle_ratio_pct": 42.80,
+            "device_thermal_slope": 0.0152,
+            "action_latency_ms": 80,
+            "response_consistency_r2": 0.9800,
+            "failure_probability_pct": 0.50,
+            "last_maintenance_date": "2026-04-01T09:00:00Z",
+            "updated_at": "2026-04-15T08:00:00Z"
+        }
+    ],
+    "esg_value_realization": [
+        {
+            "id": 1,
+            "batch_id": "batch_20260413",
+            "device_id": "greenhouse_001",
+            "record_date": "2026-04-13",
+            "biomass_carbon_sequestration_g": 150.00,
+            "operational_carbon_footprint_g": 120.00,
+            "net_zero_ratio": 1.2500,
+            "water_saved_liters": 85.50,
+            "energy_efficiency_ratio": 0.3000,
+            "cost_reduction_amount_cny": 125.80
+        },
+        {
+            "id": 2,
+            "batch_id": "batch_20260414",
+            "device_id": "greenhouse_001",
+            "record_date": "2026-04-14",
+            "biomass_carbon_sequestration_g": 165.00,
+            "operational_carbon_footprint_g": 115.00,
+            "net_zero_ratio": 1.4350,
+            "water_saved_liters": 92.30,
+            "energy_efficiency_ratio": 0.3500,
+            "cost_reduction_amount_cny": 138.50
+        },
+        {
+            "id": 3,
+            "batch_id": "batch_20260415",
+            "device_id": "greenhouse_002",
+            "record_date": "2026-04-15",
+            "biomass_carbon_sequestration_g": 98.00,
+            "operational_carbon_footprint_g": 105.00,
+            "net_zero_ratio": 0.9330,
+            "water_saved_liters": 52.80,
+            "energy_efficiency_ratio": 0.1800,
+            "cost_reduction_amount_cny": 68.20
+        }
+    ],
+    "policy_risk_thresholds": [
+        {
+            "strategy_id": 1,
+            "metric_name": "fan_control",
+            "threshold_logic": {
+                "condition": "temperature > 30",
+                "action": "turn_on_fan",
+                "value": 30.0,
+                "unit": "c",
+                "reasoning": "温度过高时自动开启风扇降温",
+                "risk_level": "LOW",
+                "target_device": "风扇",
+                "auto_execute": true,
+                "async_review": false,
+                "duration_minutes": null
+            },
+            "priority": 1,
+            "version": 1,
+            "created_at": "2026-01-01T00:00:00Z",
+            "updated_at": "2026-04-10T10:30:00Z"
+        },
+        {
+            "strategy_id": 2,
+            "metric_name": "irrigation_control",
+            "threshold_logic": {
+                "condition": "soil_moisture < 30",
+                "action": "start_irrigation",
+                "value": 30.0,
+                "unit": "pct",
+                "reasoning": "土壤干燥时启动灌溉",
+                "risk_level": "MEDIUM",
+                "target_device": "灌溉系统",
+                "auto_execute": true,
+                "async_review": true,
+                "duration_minutes": 15
+            },
+            "priority": 1,
+            "version": 3,
+            "created_at": "2026-01-01T00:00:00Z",
+            "updated_at": "2026-04-12T14:20:00Z"
+        },
+        {
+            "strategy_id": 3,
+            "metric_name": "fertilization_control",
+            "threshold_logic": {
+                "condition": "npk_level_low",
+                "action": "apply_fertilizer",
+                "value": 0.0,
+                "unit": "pct",
+                "reasoning": "养分不足时需要施肥",
+                "risk_level": "HIGH",
+                "target_device": "施肥系统",
+                "auto_execute": false,
+                "async_review": false,
+                "duration_minutes": null
+            },
+            "priority": 1,
+            "version": 1,
+            "created_at": "2026-01-01T00:00:00Z",
+            "updated_at": "2026-01-01T00:00:00Z"
+        }
+    ],
+    "agent_action_audit": [
+        {
+            "audit_id": 1,
+            "actor_id": "Human",
+            "action_type": "MANUAL_IRRIGATION",
+            "reasoning_context": "土壤看起来很干，需要浇水，上次浇了之后效果不错",
+            "expected_delta": {
+                "temperature": -1.5,
+                "humidity": 8.0,
+                "soil_moisture": 15.0,
+                "co2_ppm": 0,
+                "light_lux": 0
+            },
+            "actual_delta": {
+                "temperature": -1.2,
+                "humidity": 7.5,
+                "soil_moisture": 14.8,
+                "co2_ppm": -20,
+                "light_lux": 0
+            },
+            "skill_invoked": "calculate_device_action_latency_ms",
+            "execution_status": "Success",
+            "is_experience_source": true,
+            "status": "executed",
+            "session_id": null,
+            "action_set_hash": null,
+            "matched_logic_id": 2,
+            "user_feedback": {
+                "feedback_type": "confirm_logic",
+                "selected_logic_id": 2,
+                "confidence": 90
+            },
+            "env_snapshot_ref": {
+                "temperature": 32.5,
+                "humidity": 68.0,
+                "light_intensity": 52000.0,
+                "soil_moisture": 28.0,
+                "weather": "晴",
+                "co2_ppm": 480.0
+            },
+            "created_at": "2026-04-15T09:15:00Z"
+        },
+        {
+            "audit_id": 2,
+            "actor_id": "Agent",
+            "action_type": "FAN_CONTROL",
+            "reasoning_context": "温度超过30℃阈值，自动开启风扇降温",
+            "expected_delta": {
+                "temperature": -3.0,
+                "humidity": -5.0,
+                "soil_moisture": 0,
+                "co2_ppm": -50,
+                "light_lux": 0
+            },
+            "actual_delta": null,
+            "skill_invoked": "calculate_device_stability_energy_ratio_pct",
+            "execution_status": "Success",
+            "is_experience_source": false,
+            "status": "executed",
+            "session_id": null,
+            "action_set_hash": "a1b2c3d4e5f6",
+            "matched_logic_id": 1,
+            "user_feedback": null,
+            "env_snapshot_ref": {
+                "temperature": 31.2,
+                "humidity": 75.0,
+                "light_intensity": 48000.0,
+                "soil_moisture": 45.0,
+                "weather": "晴转多云",
+                "co2_ppm": 520.0
+            },
+            "created_at": "2026-04-15T10:30:00Z"
+        },
+        {
+            "audit_id": 3,
+            "actor_id": "Agent",
+            "action_type": "FERTILIZATION",
+            "reasoning_context": "NPK传感器检测到氮含量偏低，建议施用复合肥",
+            "expected_delta": {
+                "temperature": 0,
+                "humidity": 0,
+                "soil_moisture": 2.0,
+                "co2_ppm": 0,
+                "light_lux": 0
+            },
+            "actual_delta": null,
+            "skill_invoked": "calculate_soil_nutrient_consumption_rate_mg",
+            "execution_status": "Pending",
+            "is_experience_source": false,
+            "status": "pending_logic_confirmation",
+            "session_id": "session_20260415_001",
+            "action_set_hash": "f6e5d4c3b2a1",
+            "matched_logic_id": 3,
+            "user_feedback": null,
+            "env_snapshot_ref": {
+                "temperature": 28.0,
+                "humidity": 70.0,
+                "light_intensity": 35000.0,
+                "soil_moisture": 42.0,
+                "weather": "多云",
+                "co2_ppm": 450.0,
+                "custom_params": {
+                    "soil_n": 85.0,
+                    "soil_p": 35.0,
+                    "soil_k": 120.0
+                }
+            },
+            "created_at": "2026-04-15T11:00:00Z"
+        }
+    ],
+    "logic_grafting_logs": [
+        {
+            "log_id": 1,
+            "session_id": "session_20260414_003",
+            "feedback_type": "confirm_logic",
+            "selected_logic_id": 1,
+            "new_reasoning": null,
+            "confidence_score": 95.00,
+            "created_at": "2026-04-14T16:30:00Z"
+        },
+        {
+            "log_id": 2,
+            "session_id": "session_20260414_005",
+            "feedback_type": "adjust_logic",
+            "selected_logic_id": 2,
+            "new_reasoning": null,
+            "confidence_score": 70.00,
+            "created_at": "2026-04-14T17:45:00Z"
+        },
+        {
+            "log_id": 3,
+            "session_id": "session_20260415_001",
+            "feedback_type": "new_logic",
+            "selected_logic_id": null,
+            "new_reasoning": "夏季高温时需要更频繁的通风，建议将风扇启动阈值从30℃降低到28℃",
+            "confidence_score": 80.00,
+            "created_at": "2026-04-15T11:15:00Z"
+        }
+    ]
+}

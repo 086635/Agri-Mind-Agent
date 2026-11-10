@@ -1,0 +1,41 @@
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.pytest_cache/
+
+# ---------- 环境变量与密钥 ----------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# ---------- 数据与运行时产物 ----------
+*.db
+*.sqlite
+*.sqlite3
+*.log
+*.log.*
+
+# ---------- 鸿蒙 / HarmonyOS ----------
+oh_modules/
+.hvigor/
+build/
+*.har
+*.hap
+local.properties
+.hvigor-cache/
+
+# ---------- 编辑器 / 系统 ----------
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# ---------- 其它 ----------
+node_modules/
+dist/

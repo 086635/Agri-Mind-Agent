@@ -1,0 +1,7 @@
+# E:/important_project/FWWBC/aidemo/data.yaml
+path: E:/important_project/FWWBC/aidemo/my_dataset  # 确保这里是新路径
+train: train/images
+val: val/images
+
+names:
+  0: suspicious_point

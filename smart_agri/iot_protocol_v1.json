@@ -1,0 +1,58 @@
+{
+  "protocol": "iot_protocol_v1",
+  "description": "智慧大棚 MQTT 通信协议，适用于 STM32 + ESP8266 架构",
+  "topic_structure": {
+    "publish": {
+      "status": "farm/{device_id}/status",
+      "heartbeat": "farm/{device_id}/heartbeat"
+    },
+    "subscribe": {
+      "control": "farm/{device_id}/control"
+    }
+  },
+  "payloads": {
+    "status": {
+      "id": "设备唯一标识，格式：[A/B][4位数字]，如 A0001",
+      "t": "温度值，单位：摄氏度，范围：-40~125",
+      "h": "湿度值，单位：百分比，范围：0~100",
+      "l": "光照值，单位：lux，范围：0~100000",
+      "s": "执行器状态掩码，8位二进制，每一位代表一个执行器状态"
+    },
+    "heartbeat": {
+      "id": "设备唯一标识",
+      "t": "当前时间戳（可选）"
+    },
+    "control": {
+      "cmd": "指令码，如 0x01（打开）、0x02（关闭）、0x03（调节）",
+      "val": "指令数值，如 PWM 占空比或目标值",
+      "target": "目标端口，如 0x01（水泵）、0x02（通风扇）、0x03（遮阳帘）"
+    }
+  },
+  "data_mapping": {
+    "partition": "通过设备 ID 前缀区分 A/B 分区：A 开头为 A 分区，B 开头为 B 分区",
+    "actuators": {
+      "0x01": "水泵",
+      "0x02": "通风扇",
+      "0x03": "遮阳帘",
+      "0x04": "加热灯"
+    }
+  },
+  "examples": {
+    "status_publish": {
+      "topic": "farm/A0001/status",
+      "payload": {"id":"A0001","t":25.5,"h":60,"l":5000,"s":17}
+    },
+    "heartbeat_publish": {
+      "topic": "farm/B0002/heartbeat",
+      "payload": {"id":"B0002","t":1620000000}
+    },
+    "control_subscribe": {
+      "topic": "farm/A0001/control",
+      "payload": {"cmd":3,"val":75,"target":2}
+    }
+  },
+  "cjson_parsing": {
+    "note": "使用 cJSON 库解析时，建议先检查字段存在性再获取值",
+    "example_code": "cJSON *root = cJSON_Parse(payload);\nif (root) {\n  cJSON *id = cJSON_GetObjectItem(root, \"id\");\n  cJSON *t = cJSON_GetObjectItem(root, \"t\");\n  // 处理数据...\n  cJSON_Delete(root);\n}"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "src": [
+    "pages/MainIndex",
+    "pages/Greenhouse3DPage",
+    "pages/PestAnalysisPage",
+    "pages/FruitOutputAnalysisPage",
+    "pages/SoilEnvironmentAnalysisPage",
+    "pages/PlantLodgingAnalysisPage"
+  ]
+}

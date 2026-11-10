@@ -1,0 +1,12 @@
+# 根目录：指向包含 train/valid/test 的总文件夹
+path: E:/important_project/FWWBC/aidemo/my_dataset
+
+# 训练集、验证集、测试集的相对路径（基于上面的 path）
+train: train/images
+val: valid/images  # 如果你的文件夹确实叫 val，请改回 val
+test: test/images   # Roboflow 通常自带测试集，建议加上
+
+# 类别定义
+nc: 1
+names:
+  0: weed

@@ -1,0 +1,10 @@
+{
+  "image_name": "test_upload_e6977d.jpg",
+  "timestamp": "2026-06-06T08:21:07.961255",
+  "detections": [],
+  "summary": {
+    "total_count": 0,
+    "is_healthy": true,
+    "action_advice": "未检测到有害生物，建议继续常规监测。"
+  }
+}
